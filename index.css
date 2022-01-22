@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  color: white;
+}
+html {
+  font-family: "Overpass", sans-serif;
+  background-color: black;
+}
+#box {
+  filter: blur(20px);
+}
+
+.picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vh;
+  transform: translate(-50%, -50%);
+}
+.picture {
+  width: 100%;
+  padding-top: 50%;
+  margin-top: -50%;
+  transition: filter 1s;
+  animation: fadeIn 5s both;
+}
+.picture_active {
+  filter: blur(10px);
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  display: none;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  padding: 30px;
+  width: 100%;
+}
+
+.popup_active {
+  animation: fadeIn 1s both;
+  display: flex;
+}
+
+.popup__title {
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.cosmo__icons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 430px;
+}
+
+.icon {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  justify-content: flex-start;
+  width: 50%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  text-decoration: none;
+  /* border-bottom: 1px solid darkgrey; */
+}
+
+.icon__pic {
+  width: 5vmax;
+  height: 5vmax;
+  min-width: 30px;
+  min-height: 30px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.icon__pic_apple {
+  background: url("./img/apple.svg") 0 0 / contain no-repeat;
+}
+.icon__pic_spotify {
+  background: url("./img/spotify.svg") 0 0 / contain no-repeat;
+}
+.icon__pic_yandex {
+  background: url("./img/yandex.svg") 0 0 / contain no-repeat;
+}
+.icon__pic_youtube-music {
+  background: url("./img/youtube-music.svg") 0 0 / contain no-repeat;
+}
+.icon__pic_youtube {
+  background: url("./img/youtube.svg") 0 0 / contain no-repeat;
+}
+.icon__pic_vk {
+  background: url("./img/vk.svg") 0 0 / contain no-repeat;
+}
+
+.cursor-wrapper {
+  animation: fadeIn 1s 2s both;
+}
+
+.cursor {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  width: 40px;
+  height: 40px;
+  transition: all 1s;
+  filter: invert(1) opacity(0.6);
+  background: url("./img/click.svg") 0 0 / contain no-repeat;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
